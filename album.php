@@ -19,7 +19,7 @@ if($page->hasChildren("template=album")) {
 }
 
 if($page->hasChildren("template=album-seite")) {
-	$content .= renderNav($page->children("template=album-seite"));
+	$content .= renderFirstImageNav($page->children("template=album-seite"));
 }
 
 // if the rootParent (section) page has more than 1 child, then render
