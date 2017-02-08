@@ -38,6 +38,7 @@
 	<meta name="description" content="<?php echo $page->summary; ?>" />
 	<link href='//fonts.googleapis.com/css?family=Lusitana:400,700|Quattrocento:400,700' rel='stylesheet' type='text/css' />
 	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 </head>
 <body class="<?php if($sidebar) echo "has-sidebar "; ?>">
 
@@ -106,59 +107,5 @@
 		</p>
 	</footer>
 
-  <!-- photoswipe gallery -->
-	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-	</div>
-
-	<!--
-		for photoswipe gallery
-		TODO: should be loaded only on gallery pages!
-	-->
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/photoswipe.css">
-	<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
-			 In the folder of skin CSS file there are also:
-			 - .png and .svg icons sprite,
-			 - preloader.gif (for browsers that do not support CSS animations) -->
-	<link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/default-skin/default-skin.css">
-	<script src="<?php echo $config->urls->templates?>scripts/photoswipe.min.js"></script>
-	<script src="<?php echo $config->urls->templates?>scripts/photoswipe-ui-default.min.js"></script>
-	<script src="<?php echo $config->urls->templates?>scripts/main.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ if($page->image) {
 // If the page has children, then render navigation to them under the body.
 // See the _func.php for the renderNav example function.
 if($page->hasChildren("template=album")) {
-	$content .= renderImageNav($page->children("template=album"));
+	$content .= renderAlbumNav($page->children("template=album"));
 }
 
 if($page->hasChildren("template=album-seite")) {
