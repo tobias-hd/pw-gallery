@@ -1,7 +1,3 @@
-// Well hello there. Looks like we don't have any Javascript.
-// Maybe you could help a friend out and put some in here?
-// Or at least, when ready, this might be a good place for it.
-
 // photoswipe
 // coding from: https://webdesign.tutsplus.com/tutorials/the-perfect-lightbox-using-photoswipe-with-jquery--cms-23587
 $('.my-gallery').each(function() {

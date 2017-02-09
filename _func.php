@@ -121,7 +121,7 @@ function renderNavTree($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') 
  * @param PageArray $items
  * @return string
  */
-function renderAlbumNav(PageArray $items) {
+function renderNavToAlbum(PageArray $items) {
 	// $out is where we store the markup we are creating in this function
 	$out = '';
 	// cycle through all the items
@@ -137,7 +137,7 @@ function renderAlbumNav(PageArray $items) {
 
 		if($item->image) {
 			$image = $item->image;
-			$image = $image->width(200);
+			$image = $image->size(300, 300);
 			$out .= "<a href='$item->url'><img src='$image->url' alt='$image->description' title='$image->description' style='width:100%' /></a>";
 		}
 

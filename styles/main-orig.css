@@ -1,7 +1,3 @@
-html, body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Quattrocento', serif;
-}
-
 /**
  * main.css
  *
@@ -18,7 +14,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
  *
  */
 
-/** {
+* {
 	box-sizing: border-box;
 }
 
@@ -33,6 +29,10 @@ body, td, input[type=text], textarea {
 	font-size: 105%;
 	line-height: 1.8em;
 	color: #444;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quattrocento', serif;
 }
 
 img {
@@ -79,14 +79,14 @@ pre {
 	line-height: 1.4em;
 	padding: 1em;
 	border-left: 4px solid #ddd;
-}*/
+}
 
 /*********************************************************************
  * 2. Masthead area
  *
  */
 
-/*.topnav, .topnav li {
+.topnav, .topnav li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -141,14 +141,14 @@ form.search {
 		color: #999;
 		padding-left: 0.5em;
 		padding-right: 0.25em;
-	}*/
+	}
 
 /*********************************************************************
  * 3. Main content and sidebar
  *
  */
 
-/*#main {
+#main {
 	border-top: 1px solid #eee;
 	padding-top: 1em;
 	margin-top: 1em;
@@ -205,6 +205,7 @@ body.has-sidebar #sidebar {
 	}
 
 .align_left {
+	/* for images placed in rich text editor */
 	float: left;
 	margin: 0 1em 0.5em 0;
 	position: relative;
@@ -213,12 +214,14 @@ body.has-sidebar #sidebar {
 }
 
 .align_right {
+	/* for images placed in rich text editor */
 	float: right;
 	margin: 0 0 0.5em 1em;
 	max-width: 50%;
 }
 
 .align_center {
+	/* for images placed in rich text editor */
 	display: block;
 	margin: 1em auto;
 	position: relative;
@@ -226,11 +229,14 @@ body.has-sidebar #sidebar {
 }
 
 figure {
+	/*display: table;*/
+	/*width: 1px;*/
 	margin: .5em .5em;
 	float: left;
 }
 
 figure img {
+	/*display: table-row;*/
 	margin-bottom: 0.5em;
 }
 
@@ -239,25 +245,26 @@ figure figcaption {
 	font-size: smaller;
 	color: #777;
 	line-height: 1.4em;
-}*/
+}
 
 /*********************************************************************
  * 4. Footer
  *
  */
 
-/*#footer {
+#footer {
 	clear: both;
 	border-top: 1px solid #eee;
 	font-size: 80%;
-}*/
+}
 
 /*********************************************************************
  * 5. Media queries for responsive layout
  *
  */
 
-/*@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
+	/* mobile layout */
 
 	body, td, textarea {
 		font-size: 100%;
@@ -289,8 +296,9 @@ figure figcaption {
 }
 
 @media only screen and (min-width: 1200px) {
+	/* extra-wide desktop layout */
 
 	body, td, textarea {
 		font-size: 115%;
 	}
-}*/
+}
