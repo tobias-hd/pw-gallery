@@ -40,7 +40,7 @@
   <!--
   <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main-orig.css" />
   -->
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="<?php echo $config->urls->templates?>styles/w3.css">
   <link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
 </head>
 <body class="<?php if($sidebar) echo "has-sidebar "; ?>">
@@ -86,25 +86,25 @@
 		if($page->editable()) echo "<li class='edit'><a href='$page->editUrl'>Edit</a></li>";
 	?></ul>
 
-  <div class="w3-row w3-padding-12">
-	  <!-- breadcrumbs -->
-	  <div class='breadcrumbs w3-threequarter'><?php
-	    // breadcrumbs are the current page's parents
-	    foreach($page->parents() as $item) {
-	      echo "<span><a href='$item->url'>$item->title</a></span> ";
-	    }
-	    // optionally output the current page as the last item
-	    echo "<span>$page->title</span> ";
-	  ?></div>
+  <div id='main' class='w3-container w3-padding-8'>
 
-		<!-- search form-->
-		<form class='search w3-quarter' action='<?php echo $pages->get('template=search')->url; ?>' method='get'>
-			<input type='text' name='q' placeholder='Search' value='<?php echo $sanitizer->entities($input->whitelist('q')); ?>' />
-			<button type='submit' name='submit'>Search</button>
-		</form>
-	</div>
+    <div class="w3-row w3-padding-12">
+  	  <!-- breadcrumbs -->
+  	  <div class='breadcrumbs w3-threequarter'><?php
+  	    // breadcrumbs are the current page's parents
+  	    foreach($page->parents() as $item) {
+  	      echo "<span><a href='$item->url'>$item->title</a></span> ";
+  	    }
+  	    // optionally output the current page as the last item
+  	    echo "<span>$page->title</span> ";
+  	  ?></div>
 
-  <div id='main'>
+  		<!-- search form-->
+  		<form class='search w3-quarter' action='<?php echo $pages->get('template=search')->url; ?>' method='get'>
+  			<input type='text' name='q' placeholder='Search' value='<?php echo $sanitizer->entities($input->whitelist('q')); ?>' />
+  			<button type='submit' name='submit'>Search</button>
+  		</form>
+  	</div>
 
     <!-- main content -->
     <div id='content'>
@@ -137,7 +137,7 @@
     </p>
   </footer>
 
-  <?php if($page->template=='album-page'): ?>
+  <?php if($page->template=='album'): ?>
   <!-- photoswipe gallery -->
   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="pswp__bg"></div>

@@ -22,13 +22,11 @@
  *
  */
 function renderNav(PageArray $items) {
-
 	// $out is where we store the markup we are creating in this function
 	$out = '';
 
 	// cycle through all the items
 	foreach($items as $item) {
-
 		// render markup for each navigation item as an <li>
 		if($item->id == wire('page')->id) {
 			// if current item is the same as the page being viewed, add a "current" class to it
@@ -122,89 +120,30 @@ function renderNavTree($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') 
  * @return string
  */
 function renderNavToAlbum(PageArray $items) {
-	// $out is where we store the markup we are creating in this function
 	$out = "<div class='w3-row'>";
 	// cycle through all the items
 	foreach($items as $item) {
-		// render markup for each navigation item as an <li>
-		//if($item->id == wire('page')->id) {
-			// if current item is the same as the page being viewed, add a "current" class to it
-			//$out .= "<div class='current w3-card-4 w3-margin-bottom' style='width:30%'>";
-		//} else {
-			// otherwise just a regular list item
 		$out .= "<div class='w3-col s6 m4 l3 w3-margin-bottom w3-padding-small'>"
 		     .    "<div class='w3-card-8'>";
-		//}
 
 		if(count($item->images)) {
 			$image = $item->images->first;
-			$image = $image->size(300, 300);
+			$image = $image->size(350, 350);
 			$out .=   "<a href='$item->url'><img src='$image->url' alt='$image->description' title='$image->description' style='width:100%' /></a>";
 		}
 
 		$out .=     "<div class='w3-container'>"
 				 .        "<h4><a href='$item->url'>$item->title</a></h4>";
 
-		// markup for the link
-		//$out .= "<a href='$item->url'>$item->title</a> ";
-
-		// if the item has summary text, include that too
-		//if($item->summary) $out .= "<div class='summary'>$item->summary</div>";
     if($item->summary) {
 			$out .=     "<p>$item->summary</p>";
 		}
 
-		// close the list item
 		$out .=     "</div>"
 		     .    "</div>"
 				 .  "</div>";
 	}
   $out .= "</div>";
 
-	// if output was generated above, wrap it in a <ul>
-	//if($out) $out = "<ul class='nav'>$out</ul>\n";
-	// return the markup we generated above
-	return $out;
-}
-
-
-/**
- * Given a group of pages, render a simple <ul> navigation with first image of an array of images
- * @param PageArray $items
- * @return string
- */
-function renderFirstImageNav(PageArray $items) {
-	// $out is where we store the markup we are creating in this function
-	$out = '';
-	// cycle through all the items
-	foreach($items as $item) {
-		// render markup for each navigation item as an <li>
-		if($item->id == wire('page')->id) {
-			// if current item is the same as the page being viewed, add a "current" class to it
-			$out .= "<li class='current'>";
-		} else {
-			// otherwise just a regular list item
-			$out .= "<li>";
-		}
-
-		if(count($item->images)) {
-			$image = $item->images->first;
-			$image = $image->width(200);
-			$out .= "<img src='$image->url' alt='$image->description' title='$image->description' />";
-		}
-
-		// markup for the link
-		$out .= "<a href='$item->url'>$item->title</a> ";
-
-		// if the item has summary text, include that too
-		if($item->summary) $out .= "<div class='summary'>$item->summary</div>";
-
-		// close the list item
-		$out .= "</li>";
-	}
-
-	// if output was generated above, wrap it in a <ul>
-	if($out) $out = "<ul class='nav'>$out</ul>\n";
-	// return the markup we generated above
 	return $out;
 }
