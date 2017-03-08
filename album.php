@@ -23,12 +23,12 @@ if(count($page->images) > 1) {
 	$index = 0;
 	foreach($page->images as $image) {
 	  $thumbnail = $image->size(250,167);
-		$content .= "<figure class='w3-col s6 m3 l2 w3-margin-0' itemprop='associatedMedia' itemscope itemtype='http://schema.org/ImageObject'>"
+		$content .= "<figure class='w3-col s6 m3 l2 w3-margin-0 w3-tooltip w3-padding-tiny' itemprop='associatedMedia' itemscope itemtype='http://schema.org/ImageObject'>"
 	           .    "<a href='{$image->url}' itemprop='contentUrl' data-size='{$image->width}x{$image->height}' data-index='{$index}'>"
-	           .      "<img src='{$thumbnail->url}' itemprop='thumbnail' alt='{$thumbnail->description}' style='width:100%' />"
+	           .      "<img src='{$thumbnail->url}' itemprop='thumbnail' alt='{$thumbnail->description}' style='width:100%' class='w3-hover-opacity'/>"
 	           .    "</a>"
-	           .    "<figcaption itemprop='caption description'>{$image->description}</figcaption>"
-	           . "</figure>";
+	           .    "<figcaption itemprop='caption description' class='w3-text w3-tag figcaption-tooltip'>{$image->description}</figcaption>"
+	           .  "</figure>";
 	  $index++;
 	}
 	$content .= "</div>";
