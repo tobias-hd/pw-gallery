@@ -136,7 +136,11 @@ function renderNavToAlbum(PageArray $items) {
 				 .        "<h4><a href='$item->url'>$item->title</a></h4>";
 
     if($item->summary) {
+			// TODO: only print ~ 1 line
 			$out .=     "<p>$item->summary</p>";
+		} else {
+			// non-breaking space, to add empty line
+			$out .=     "<p>&nbsp</p>";
 		}
 
 		$out .=     "</div>"
