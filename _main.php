@@ -46,63 +46,63 @@
 <body class="<?php if($sidebar) echo "has-sidebar "; ?>">
 
   <!-- top navigation -->
-	<!-- Header -->
-	<header class="w3-display-container w3-content" style="max-width:1500px">
-	  <img class="w3-image" src="<?php echo $config->urls->templates?>img/HeidelbergImDunst2015_0022_web-header.jpg" alt="Heidelberg" width="1500" height="335">
-	  <div class="header-text w3-display-middle w3-padding-xlarge w3-border w3-text-shadow w3-text-light-grey w3-center">
-	    <h1 class="w3-hide-medium w3-hide-small w3-xxlarge">HEIDELBERGER MUNKS</h1>
-	    <h3 class="w3-hide-large" style="white-space:nowrap">HEIDELBERGER MUNKS</h3>
-	    <h3 class="w3-hide-medium w3-hide-small">Familienalbum</h3>
-	  </div>
+  <!-- Header -->
+  <header class="w3-display-container w3-content" style="max-width:1500px">
+    <img class="w3-image" src="<?php echo $config->urls->templates?>img/HeidelbergImDunst2015_0022_web-header.jpg" alt="Heidelberg" width="1500" height="335">
+    <div class="header-text w3-display-middle w3-padding-xlarge w3-border w3-text-shadow w3-text-light-grey w3-center">
+      <h1 class="w3-hide-medium w3-hide-small w3-xxlarge">HEIDELBERGER MUNKS</h1>
+      <h3 class="w3-hide-large" style="white-space:nowrap">HEIDELBERGER MUNKS</h3>
+      <h3 class="w3-hide-medium w3-hide-small">Familienalbum</h3>
+    </div>
 
-	  <!-- Navbar (placed at the bottom of the header image) -->
-	  <div class="w3-navbar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px"><?php
-	    // top navigation consists of homepage and its visible children
-	    foreach($homepage->and($homepage->children) as $item) {
+    <!-- Navbar (placed at the bottom of the header image) -->
+    <div class="w3-navbar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom:-16px"><?php
+      // top navigation consists of homepage and its visible children
+      foreach($homepage->and($homepage->children) as $item) {
         echo "<a class='";
-	      if($item->id == $page->rootParent->id) {
-	        echo "w3-blue ";
-	      }
-	      echo "w3-bar-item w3-button w3-hover-light-blue' href='$item->url'>$item->title</a>";
-	    }
-	    // output an "Edit" link if this page happens to be editable by the current user
-	    if($page->editable()) echo "<a class='w3-bar-item w3-button w3-hover-light-blue' href='$page->editUrl'>Edit</a>";
-  	?></div>
-	</header>
+        if($item->id == $page->rootParent->id) {
+          echo "w3-blue ";
+        }
+        echo "w3-bar-item w3-button w3-hover-light-blue' href='$item->url'>$item->title</a>";
+      }
+      // output an "Edit" link if this page happens to be editable by the current user
+      if($page->editable()) echo "<a class='w3-bar-item w3-button w3-hover-light-blue' href='$page->editUrl'>Edit</a>";
+    ?></div>
+  </header>
 
-	<!-- Navbar on small screens -->
-	<ul class="w3-navbar w3-light-grey w3-hide-large w3-hide-medium"><?php
-		// top navigation consists of homepage and its visible children
-		foreach($homepage->and($homepage->children) as $item) {
+  <!-- Navbar on small screens -->
+  <ul class="w3-navbar w3-light-grey w3-hide-large w3-hide-medium"><?php
+    // top navigation consists of homepage and its visible children
+    foreach($homepage->and($homepage->children) as $item) {
       echo "<li><a class='";
-			if($item->id == $page->rootParent->id) {
+      if($item->id == $page->rootParent->id) {
         echo "w3-blue ";
-			}
-			echo "w3-bar-item w3-button w3-hover-light-blue' href='$item->url'>$item->title</a></li>";
-		}
-		// output an "Edit" link if this page happens to be editable by the current user
-		if($page->editable()) echo "<li><a class='w3-bar-item w3-button w3-hover-light-blue' href='$page->editUrl'>Edit</a></li>";
-	?></ul>
+      }
+      echo "w3-bar-item w3-button w3-hover-light-blue' href='$item->url'>$item->title</a></li>";
+    }
+    // output an "Edit" link if this page happens to be editable by the current user
+    if($page->editable()) echo "<li><a class='w3-bar-item w3-button w3-hover-light-blue' href='$page->editUrl'>Edit</a></li>";
+  ?></ul>
 
   <div id='main' class='w3-container w3-padding-8'>
 
     <div class="w3-row w3-padding-12">
-  	  <!-- breadcrumbs -->
-  	  <div class='breadcrumbs w3-threequarter w3-padding-8'><?php
-  	    // breadcrumbs are the current page's parents
-  	    foreach($page->parents() as $item) {
-  	      echo "<span><a href='$item->url'>$item->title</a></span> ";
-  	    }
-  	    // optionally output the current page as the last item
-  	    echo "<span>$page->title</span> ";
-  	  ?></div>
+      <!-- breadcrumbs -->
+      <div class='breadcrumbs w3-threequarter w3-padding-8'><?php
+        // breadcrumbs are the current page's parents
+        foreach($page->parents() as $item) {
+          echo "<span><a href='$item->url'>$item->title</a></span> ";
+        }
+        // optionally output the current page as the last item
+        echo "<span>$page->title</span> ";
+      ?></div>
 
-  		<!-- search form-->
-  		<form class='search w3-quarter' action='<?php echo $pages->get('template=search')->url; ?>' method='get'>
-  			<input type='text' name='q' class='w3-input w3-animate-input search' style='width:30%' placeholder='Search' value='<?php echo $sanitizer->entities($input->whitelist('q')); ?>' />
-  			<button type='submit' name='submit'>Search</button>
-  		</form>
-  	</div>
+      <!-- search form-->
+      <form class='search w3-quarter' action='<?php echo $pages->get('template=search')->url; ?>' method='get'>
+        <input type='text' name='q' class='w3-input w3-animate-input search' style='width:30%' placeholder='Search' value='<?php echo $sanitizer->entities($input->whitelist('q')); ?>' />
+        <button type='submit' name='submit'>Search</button>
+      </form>
+    </div>
 
     <!-- main content -->
     <div id='content'>
