@@ -136,8 +136,17 @@ function renderNavToAlbum(PageArray $items) {
 				 .        "<h4><a href='$item->url'>$item->title</a></h4>";
 
     if($item->summary) {
-			// TODO: only print ~ 1 line
-			$out .=     "<p>$item->summary</p>";
+			$length = strlen($item->summary);
+			// if summary is too long, only display its first characters, and add a tooltip
+			// with the full text
+			if ($length > 25) {
+				$beginning_of_summary = substr($item->summary, 0, 24) . "...";
+				$out .=   "<p class='w3-tooltip'>$beginning_of_summary"
+			       .    "<span class='albumsummary-tooltip w3-text w3-tag'>$item->summary</span></p>";
+			} else {
+				$out .=   "<p>$item->summary</p>";
+			}
+
 		} else {
 			// non-breaking space, to add empty line
 			$out .=     "<p>&nbsp</p>";

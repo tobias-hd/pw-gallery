@@ -18,7 +18,8 @@ if($page->hasChildren("template=album")) {
 
 // image gallery
 if(count($page->images) > 1) {
-	$content .= "<div class='my-gallery w3-row' itemscope itemtype='http://schema.org/ImageGallery'>";
+	$content .= "<h2>Fotos</h2>"
+	         .  "<div class='my-gallery w3-row' itemscope itemtype='http://schema.org/ImageGallery'>";
 
 	$index = 0;
 	foreach($page->images as $image) {
@@ -40,8 +41,9 @@ if(count($page->videos)) {
            .  "<div class='w3-row'>";
 
 	foreach($page->videos as $video) {
-		$content .= "<p class='w3-col s12 m6 l4'>"
-						 .    "<video width='320' height='240' controls><source src='$video->url' type='video/$video->ext'>Your browser does not support the video tag.</video>"
+		$content .= "<p class='w3-col s12 m12 l6 w3-padding-tiny'>"
+						 .    $video->description
+						 .    "<video width='100%' controls><source src='$video->url' type='video/$video->ext'>Your browser does not support the video tag.</video>"
 						 .  "</p>";
 	}
 	$content .= "</div>";

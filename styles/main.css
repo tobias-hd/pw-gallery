@@ -11,23 +11,25 @@ html, body, h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+/* tooltip for description of album, to be displayed when text is longer than ~1 line */
+.albumsummary-tooltip {
+  position: absolute;
+  left: 0;
+  bottom: 1.5em;
+}
+
 .header-text {
   letter-spacing: 2pt;
 }
 
-form.search {
-	float: right;
-	margin: 0;
+form.search button {
+	display: none;
 }
-	form.search input {
-		margin: 0;
-		padding: 0.25em 0.5em;
-		border: 1px solid #ccc;
-		width: 100%;
-	}
-	form.search button {
-		display: none;
-	}
+
+input.search {
+  width: "30%";
+  float: right;
+}
 
 .breadcrumbs {
 	clear: both;
