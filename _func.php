@@ -160,3 +160,45 @@ function renderNavToAlbum(PageArray $items) {
 
   return $out;
 }
+
+function renderAlbumList(PageArray $items) {
+  $out = "<ul class='w3-ul w3-card-4 w3-hoverable w3-row'>";
+
+  foreach($items as $item) {
+    $out .= "<li class='resp-listitem-w-image'>";
+
+    // first column
+    if(count($item->images)) {
+      $image = $item->images->first;
+      $image = $image->size(350,150);
+      $out .= "<div class='w3-third w3-container'>"
+           .    "<a href='$item->url'><img src='$image->url' alt='$image->description' title='$image->description' style='width:100%' /></a>"
+           .  "</div>";
+    }
+
+    // second column
+    $out .= "<div class='w3-third w3-container'>"
+         .    "<h4><a href='$item->url'>$item->title</a></h4>"
+         .    "<p>$item->summary</p>"
+         .  "</div>";
+
+    // third column
+    $out .= "<div class='w3-third w3-container'>"
+         .    "<i>Referenz-Datum:</i> $item->date<br>"
+         .    "<i>angelegt:</i> " . date("d.n.Y, H:i:s", $item->created) . " Uhr<br>"
+         .    "<i>zuletzt geändert:</i> " . date("d.n.Y, H:i:s", $item->modified) . " Uhr<br>"
+         .    count($item->images) . " Bild";
+    if (count($item->images) > 1) {
+      $out .= "er";
+    }
+    $out .=   "<br>" . count($item->videos) . " Video";
+    if (count($item->videos) > 1) {
+      $out .= "s";
+    }
+    $out .=  "</div>"
+         . "</li>";
+  }
+  $out .= "</ul>";
+
+  return $out;
+}

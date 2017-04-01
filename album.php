@@ -17,7 +17,7 @@ if($page->hasChildren("template=album")) {
 }
 
 // image gallery
-if(count($page->images) > 1) {
+if(count($page->images)) {
   $content .= "<h2>Fotos</h2>"
            .  "<div class='my-gallery w3-row' itemscope itemtype='http://schema.org/ImageGallery'>";
 
