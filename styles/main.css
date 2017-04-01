@@ -30,7 +30,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
 
 form.search button {
-	display: none;
+  display: none;
 }
 
 input.search {
@@ -39,14 +39,14 @@ input.search {
 }
 
 .breadcrumbs {
-	clear: both;
+  clear: both;
 }
-	.breadcrumbs span:after {
-		content: ">";
-		color: #999;
-		padding-left: 0.5em;
-		padding-right: 0.25em;
-	}
+  .breadcrumbs span:after {
+    content: ">";
+    color: #999;
+    padding-left: 0.5em;
+    padding-right: 0.25em;
+  }
 
 /**
  * main.css
@@ -65,66 +65,66 @@ input.search {
  */
 
 /** {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	padding: 5%;
-	max-width: 1600px;
-	margin: 0 auto;
+  padding: 5%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 body, td, input[type=text], textarea {
-	font-family: 'Quattrocento', serif;
-	font-size: 105%;
-	line-height: 1.8em;
-	color: #444;
+  font-family: 'Quattrocento', serif;
+  font-size: 105%;
+  line-height: 1.8em;
+  color: #444;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 h2 {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 h3 {
-	border-top: 1px solid #eee;
-	padding-top: 1em;
-	color: #777;
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+  color: #777;
 }
 
 a {
-	color: #333;
-	text-decoration: none;
-	border-bottom: 1px solid #ccc;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
-	a:hover,
-	.nav a:hover {
-		color: #000;
-		border-color: #aaa;
-	}
+  a:hover,
+  .nav a:hover {
+    color: #000;
+    border-color: #aaa;
+  }
 
 blockquote {
-	margin-left: 0;
-	padding-left: 1.5em;
-	padding-right: 2em;
-	border-left: 4px solid #ddd;
-	font-style: italic;
-	color: #777;
+  margin-left: 0;
+  padding-left: 1.5em;
+  padding-right: 2em;
+  border-left: 4px solid #ddd;
+  font-style: italic;
+  color: #777;
 }
 
 pre, code {
-	background: #eee;
-	border: 1px solid #ddd;
+  background: #eee;
+  border: 1px solid #ddd;
 }
 
 pre {
-	font-size: 14px;
-	line-height: 1.4em;
-	padding: 1em;
-	border-left: 4px solid #ddd;
+  font-size: 14px;
+  line-height: 1.4em;
+  padding: 1em;
+  border-left: 4px solid #ddd;
 }*/
 
 /*********************************************************************
@@ -133,34 +133,34 @@ pre {
  */
 
 /*.topnav, .topnav li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-	.topnav li {
-		float: left;
-		margin-right: 1em;
-		margin-bottom: 1em;
-	}
-	.topnav a {
-		padding: 0.25em 0.5em;
-		text-decoration: none;
-		display: block;
-		background: #eee;
-		color: #333;
-		border: 1px solid #eee;
-	}
-	.topnav a:hover {
-		background: #ddd;
-		border-color: #ddd;
-	}
-	.topnav li.current a {
-		background: #ddd;
-		border-color: #ddd;
-	}
-	.topnav li.edit a {
-		background: none;
-	}
+  .topnav li {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+  .topnav a {
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    display: block;
+    background: #eee;
+    color: #333;
+    border: 1px solid #eee;
+  }
+  .topnav a:hover {
+    background: #ddd;
+    border-color: #ddd;
+  }
+  .topnav li.current a {
+    background: #ddd;
+    border-color: #ddd;
+  }
+  .topnav li.edit a {
+    background: none;
+  }
 */
 
 /*********************************************************************
@@ -169,96 +169,96 @@ pre {
  */
 
 /*#main {
-	border-top: 1px solid #eee;
-	padding-top: 1em;
-	margin-top: 1em;
-	clear: both;
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+  margin-top: 1em;
+  clear: both;
 }
 
 #content {
-	width: 85%;
+  width: 85%;
 }
 
 #content, #sidebar {
-	padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 body.has-sidebar #content {
-	width: 65%;
-	float: left;
+  width: 65%;
+  float: left;
 }
 
 body.has-sidebar #sidebar {
-	width: 35%;
-	padding-left: 5%;
-	float: left;
+  width: 35%;
+  padding-left: 5%;
+  float: left;
 }
 
 .nav {
-	margin-left: 0;
-	padding-left: 0;
-	list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
 }
-	.nav .nav {
-		padding-left: 1.5em;
-		list-style: disc;
-	}
-	.nav li {
-		margin: 1em 0;
-	}
+  .nav .nav {
+    padding-left: 1.5em;
+    list-style: disc;
+  }
+  .nav li {
+    margin: 1em 0;
+  }
 
-	.nav-tree li {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+  .nav-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-	.nav a {
-		font-weight: bold;
-	}
+  .nav a {
+    font-weight: bold;
+  }
 
-	.nav-tree li a {
-		color: #777;
-	}
+  .nav-tree li a {
+    color: #777;
+  }
 
-	.nav .current > a {
-		color: #333;
-	}
+  .nav .current > a {
+    color: #333;
+  }
 
 .align_left {
-	float: left;
-	margin: 0 1em 0.5em 0;
-	position: relative;
-	top: 0.5em;
-	max-width: 50%;
+  float: left;
+  margin: 0 1em 0.5em 0;
+  position: relative;
+  top: 0.5em;
+  max-width: 50%;
 }
 
 .align_right {
-	float: right;
-	margin: 0 0 0.5em 1em;
-	max-width: 50%;
+  float: right;
+  margin: 0 0 0.5em 1em;
+  max-width: 50%;
 }
 
 .align_center {
-	display: block;
-	margin: 1em auto;
-	position: relative;
-	top: 0.5em;
+  display: block;
+  margin: 1em auto;
+  position: relative;
+  top: 0.5em;
 }
 
 figure {
-	margin: .5em .5em;
-	float: left;
+  margin: .5em .5em;
+  float: left;
 }
 
 figure img {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 figure figcaption {
-	display: table-row;
-	font-size: smaller;
-	color: #777;
-	line-height: 1.4em;
+  display: table-row;
+  font-size: smaller;
+  color: #777;
+  line-height: 1.4em;
 }*/
 
 /*********************************************************************
@@ -267,9 +267,9 @@ figure figcaption {
  */
 
 /*#footer {
-	clear: both;
-	border-top: 1px solid #eee;
-	font-size: 80%;
+  clear: both;
+  border-top: 1px solid #eee;
+  font-size: 80%;
 }*/
 
 /*********************************************************************
@@ -279,38 +279,38 @@ figure figcaption {
 
 /*@media only screen and (max-width: 767px) {
 
-	body, td, textarea {
-		font-size: 100%;
-	}
-	body.has-sidebar #content,
-	body.has-sidebar #sidebar {
-		float: none;
-		width: 100%;
-		padding: 0;
-	}
-	form.search {
-		float: none;
-		width: 100%;
-	}
-	#content {
-		width: 100%;
-	}
-	#sidebar {
-		border-top: 1px solid #eee;
-		padding-top: 1em;
-	}
-	.align_left, .align_right, .align_center {
-		display: block;
-		float: none;
-		margin: 1em auto;
-		max-width: 100%;
-	}
+  body, td, textarea {
+    font-size: 100%;
+  }
+  body.has-sidebar #content,
+  body.has-sidebar #sidebar {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+  form.search {
+    float: none;
+    width: 100%;
+  }
+  #content {
+    width: 100%;
+  }
+  #sidebar {
+    border-top: 1px solid #eee;
+    padding-top: 1em;
+  }
+  .align_left, .align_right, .align_center {
+    display: block;
+    float: none;
+    margin: 1em auto;
+    max-width: 100%;
+  }
 
 }
 
 @media only screen and (min-width: 1200px) {
 
-	body, td, textarea {
-		font-size: 115%;
-	}
+  body, td, textarea {
+    font-size: 115%;
+  }
 }*/
