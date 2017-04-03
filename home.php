@@ -8,20 +8,10 @@
 $content = $page->body . renderNav($page->children);
 
 $content .= "<h2>Neue Alben</h2>";
+$content .= "<span class='w3-bar'>"
+         .   "<button class='w3-bar-item w3-button w3-right w3-hover-light-blue w3-light-grey'>angelegt</button>"
+         .   "<button class='w3-bar-item w3-button w3-right w3-hover-light-blue w3-light-grey'>geändert</button>"
+         .   "<a class='w3-bar-item w3-button w3-right w3-hover-light-blue w3-blue' href='$page->url'>Referenz-Datum</a>"
+         .   "<span class='w3-bar-item w3-right'>Sortierung: </span>"
+         . "</span>";
 $content .= renderAlbumList($page->find("template=album,sort=-date,limit=20"));
-
-// if there are images, lets choose one to output in the sidebar
-if(count($page->images)) {
-  // if the page has images on it, grab one of them randomly...
-  $image = $page->images->getRandom();
-  // resize it to 400 pixels wide
-  $image = $image->width(400);
-  // output the image at the top of the sidebar...
-  $sidebar = "<img src='$image->url' alt='$image->description' />";
-  // ...and append sidebar text under the image
-  $sidebar .= $page->sidebar;
-} else {
-  // no images...
-  // append sidebar text if the page has it
-  $sidebar = $page->sidebar;
-}

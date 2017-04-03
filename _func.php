@@ -4,9 +4,7 @@
  * /site/templates/_func.php
  *
  * Example of shared functions used by template files
- *
  * This file is currently included by _init.php
- *
  * For more information see README.txt
  *
  */
@@ -115,7 +113,7 @@ function renderNavTree($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') 
 
 
 /**
- * Given a group of pages, render a simple <ul> navigation with image
+ * Given a group of pages, render a navigation with image cards
  * @param PageArray $items
  * @return string
  */
@@ -161,14 +159,22 @@ function renderNavToAlbum(PageArray $items) {
   return $out;
 }
 
+
+/**
+ * Given a group of pages, render a responsive list
+ * @param PageArray $items
+ * @return string
+ */
 function renderAlbumList(PageArray $items) {
   $out = "<ul class='w3-ul w3-card-4 w3-hoverable w3-row'>";
 
   foreach($items as $item) {
     $out .= "<li class='resp-listitem-w-image'>";
+    $image_count = count($item->images);
+    $video_count = count($item->videos);
 
     // first column
-    if(count($item->images)) {
+    if($image_count) {
       $image = $item->images->first;
       $image = $image->size(350,150);
       $out .= "<div class='w3-third w3-container'>"
@@ -187,12 +193,25 @@ function renderAlbumList(PageArray $items) {
          .    "<i>Referenz-Datum:</i> $item->date<br>"
          .    "<i>angelegt:</i> " . date("d.n.Y, H:i:s", $item->created) . " Uhr<br>"
          .    "<i>zuletzt geändert:</i> " . date("d.n.Y, H:i:s", $item->modified) . " Uhr<br>"
-         .    count($item->images) . " Bild";
-    if (count($item->images) > 1) {
+         .    "<span class='w3-badge";
+    if ($image_count == 1) {
+      $out .= " w3-blue";
+    } else if ($image_count > 1){
+      $out .= " w3-red";
+    }
+    $out .= "'>" . $image_count . "</span> Bild";
+    if ($image_count > 1) {
       $out .= "er";
     }
-    $out .=   "<br>" . count($item->videos) . " Video";
-    if (count($item->videos) > 1) {
+
+    $out .=   ", <span class='w3-badge";
+    if ($video_count == 1) {
+      $out .= " w3-blue";
+    } else if ($video_count > 1){
+      $out .= " w3-red";
+    }
+    $out .= "'>" . $video_count . "</span> Video";
+    if ($video_count > 1) {
       $out .= "s";
     }
     $out .=  "</div>"
