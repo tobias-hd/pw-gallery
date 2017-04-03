@@ -24,7 +24,7 @@ if(count($page->images)) {
   $index = 0;
   foreach($page->images as $image) {
     $thumbnail = $image->size(250,167);
-    $content .= "<figure class='w3-col s6 m3 l2 w3-margin-0 w3-tooltip w3-padding-tiny' itemprop='associatedMedia' itemscope itemtype='http://schema.org/ImageObject'>"
+    $content .= "<figure class='w3-col s6 m3 l2 margin-0 w3-tooltip padding-tiny' itemprop='associatedMedia' itemscope itemtype='http://schema.org/ImageObject'>"
              .    "<a href='{$image->url}' itemprop='contentUrl' data-size='{$image->width}x{$image->height}' data-index='{$index}'>"
              .      "<img src='{$thumbnail->url}' itemprop='thumbnail' alt='{$thumbnail->description}' style='width:100%' class='w3-hover-opacity'/>"
              .    "</a>"
@@ -41,7 +41,7 @@ if(count($page->videos)) {
            .  "<div class='w3-row'>";
 
   foreach($page->videos as $video) {
-    $content .= "<p class='w3-col s12 m12 l6 w3-padding-tiny'>"
+    $content .= "<p class='w3-col s12 m12 l6 padding-tiny'>"
              .    $video->description
              .    "<video width='100%' controls><source src='$video->url' type='video/$video->ext'>Your browser does not support the video tag.</video>"
              .  "</p>";

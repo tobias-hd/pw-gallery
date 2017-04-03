@@ -20,6 +20,25 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .header-text {
   letter-spacing: 2pt;
+  text-shadow: 1px 1px 0 #444;
+}
+
+.navbar {
+  width: initial;
+  bottom: -16px;
+}
+
+.padding-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.padding-tiny {
+  padding: 2px 4px;
+}
+
+.margin-0 {
+  margin: 0;
 }
 
 .resp-listitem-w-image {

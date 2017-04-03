@@ -124,7 +124,7 @@ function renderNavToAlbum(PageArray $items) {
   // cycle through all the items
   foreach($items as $item) {
     $out .= "<div class='w3-col s6 m4 l3 w3-margin-bottom w3-padding-small'>"
-         .    "<div class='w3-card-8'>";
+         .    "<div class='w3-card-4'>";
 
     if(count($item->images)) {
       $image = $item->images->first;
